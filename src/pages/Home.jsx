@@ -1,5 +1,4 @@
 import '../style/Style.css';
-import Navbar from '../components/Navbar';
 import Crad from '../components/Card';
 
 function Home() {
