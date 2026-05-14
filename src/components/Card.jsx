@@ -36,8 +36,8 @@ function Products() {
                   <span className="rating-text">(4.8)</span>
                 </div>
                 <div className="product-price">
-                  <span className="current-price">₹{product.price.toFixed(0)}</span>
-                  <span className="original-price">₹{(product.price * 1.25).toFixed(0)}</span>
+                  <span className="current-price">PKR {product.price.toFixed(0)}</span>
+                  <span className="original-price">PKR {(product.price * 1.25).toFixed(0)}</span>
                 </div>
                 <p className="product-description">{product.description}</p>
                 

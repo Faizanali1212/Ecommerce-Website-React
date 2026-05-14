@@ -1,7 +1,11 @@
 import '../style/Contact.css';
+import { ThemeContext } from './ThemContext';
+import { useContext } from 'react';
+
 function Contact() {
+  const { theme } = useContext(ThemeContext);
   return (
-    <div className="contact-page">
+    <div className={`contact-page ${theme === 'dark' ? 'contact-dark' : ''}`}>
       {/* Hero */}
       {/* Contact Content */}
       <section className="contact-content">

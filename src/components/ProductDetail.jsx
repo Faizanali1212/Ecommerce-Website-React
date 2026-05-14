@@ -2,10 +2,13 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import products from '../data/server';
 import '../style/Style.css';
+import { ThemeContext } from './ThemContext';
+import { useContext } from 'react';
 
 function ProductDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const { theme } = useContext(ThemeContext);
   const selectedProduct = products.find((product) => product.id === Number(id));
   const [selectedImage, setSelectedImage] = useState(0);
   const [quantity, setQuantity] = useState(1);
@@ -30,7 +33,7 @@ function ProductDetail() {
   ];
 
   return (
-    <div className="product-detail-page">
+    <div className={`product-detail-page ${theme === 'dark' ? 'product-detail-dark' : ''}`}>
       {/* Breadcrumb */}
       <nav className="breadcrumb">
         <div className="container">
@@ -72,8 +75,8 @@ function ProductDetail() {
 
               <div className="product-price-section">
                 <div className="price-container">
-                  <span className="current-price">₹{selectedProduct.price.toFixed(0)}</span>
-                  <span className="original-price">₹{(selectedProduct.price * 1.25).toFixed(0)}</span>
+                  <span className="current-price">PKR {selectedProduct.price.toFixed(0)}</span>
+                  <span className="original-price">PKR {(selectedProduct.price * 1.25).toFixed(0)}</span>
                   <span className="discount">{selectedProduct.discount || '-20%'}</span>
                 </div>
               </div>
@@ -86,7 +89,7 @@ function ProductDetail() {
                   <ul>
                     <li>✅ Premium Quality Material</li>
                     <li>✅ 1 Year Warranty</li>
-                    <li>✅ Free Shipping Above ₹999</li>
+                    <li>✅ Free Shipping Above PKR 999</li>
                     <li>✅ 30 Days Return Policy</li>
                   </ul>
                 </div>
@@ -117,7 +120,7 @@ function ProductDetail() {
 
                 <div className="product-actions">
                   <button className="add-to-cart-btn">
-                    Add to Cart - ₹{ (selectedProduct.price * quantity).toFixed(0) }
+                    Add to Cart - PKR { (selectedProduct.price * quantity).toFixed(0) }
                   </button>
                   <button className="buy-now-btn">Buy Now</button>
                 </div>

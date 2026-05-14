@@ -1,16 +1,19 @@
 import { Link, useLocation } from 'react-router-dom';
 import '../style/Style.css';
+import { ThemeContext} from '../components/ThemContext';
+import { useContext } from 'react';
 
 function Navbar() {
-    const location = useLocation(); // Current route detect karega
+    const location = useLocation();
+    const { theme, changeTheme } = useContext(ThemeContext);
 
-    // Active class check karne ke liye function
     const isActive = (path) => {
         return location.pathname === path;
+        
     };
 
     return (
-        <nav className="navbar">
+        <nav className={`navbar ${theme === 'dark' ? 'navbar-dark' : ''}`}>
             <div className="nav-container">
                 <div className="nav-logo">
                     <h2>Shopify Pro</h2>
@@ -35,7 +38,9 @@ function Navbar() {
                     <div className="action-buttons">
                         <button className="wishlist-btn">♥ 3</button>
                         <button className="cart-btn">🛒 5</button>
-                        <button className="toggle-btn"></button>
+                        <button className="toggle-btn" onClick={changeTheme}>
+                            Toggle Theme
+                        </button>
                         <button className="account-btn">Account</button>
                     </div>
                 </div>

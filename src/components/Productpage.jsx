@@ -2,8 +2,11 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import data from "../data/server";
 import '../style/Product.filtering.css';
+import { ThemeContext } from './ThemContext';
+import { useContext } from 'react';
 
 function ProductsListing() {
+  const { theme } = useContext(ThemeContext);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [sortBy, setSortBy] = useState('featured');
@@ -46,7 +49,7 @@ function ProductsListing() {
   const categories = ['all', 'electronics', 'clothing', 'accessories', 'home'];
 
   return (
-    <div className="products-listing">
+    <div className={`products-listing ${theme === 'dark' ? 'products-listing-dark' : ''}`}>
       {/* Hero Banner */}
       <section className="products-hero">
         <div className="container">
@@ -131,8 +134,8 @@ function ProductsListing() {
                         <span>({product.rating || 4.8})</span>
                       </div>
                       <div className="product-price">
-                        <span className="current-price">₹{product.price.toFixed(0)}</span>
-                        <span className="original-price">₹{(product.price * 1.25).toFixed(0)}</span>
+                        <span className="current-price">PKR {product.price.toFixed(0)}</span>
+                        <span className="original-price">PKR {(product.price * 1.25).toFixed(0)}</span>
                       </div>
                     </div>
                   </div>

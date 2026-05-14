@@ -125,8 +125,12 @@
 
 .product-image-container {
   position: relative;
-  height: 250px;
+  height: 280px;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8fafc;
 }
 
 .product-image {
@@ -247,6 +251,46 @@
 
 .clear-filters-btn:hover {
   background: #1d4ed8;
+}
+
+/* Product page toggle styles */
+.products-listing.products-listing-dark {
+  background: #0f172a;
+}
+
+.products-listing.products-listing-dark .products-hero {
+  background: linear-gradient(135deg, #111827 0%, #1e293b 100%);
+}
+
+.products-listing.products-listing-dark .products-hero-title,
+.products-listing.products-listing-dark .products-hero-subtitle,
+.products-listing.products-listing-dark .product-name,
+.products-listing.products-listing-dark .no-products h3,
+.products-listing.products-listing-dark .no-products-content {
+  color: #e5e7eb;
+}
+
+.products-listing.products-listing-dark .filters-section,
+.products-listing.products-listing-dark .products-grid-section {
+  background: #111827;
+}
+
+.products-listing.products-listing-dark .search-input,
+.products-listing.products-listing-dark .sort-wrapper select,
+.products-listing.products-listing-dark .filter-btn {
+  background: #1f2937;
+  border-color: #374151;
+  color: #e5e7eb;
+}
+
+.products-listing.products-listing-dark .search-input::placeholder {
+  color: #9ca3af;
+}
+
+.products-listing.products-listing-dark .product-card {
+  background: #1f2937;
+  border-color: #374151;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.35);
 }
 
 /* Responsive */

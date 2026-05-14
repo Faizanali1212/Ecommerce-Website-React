@@ -1,9 +1,12 @@
 import '../style/Style.css';
 import Crad from '../components/Card';
+import { ThemeContext} from '../components/ThemContext';
+import { useContext } from 'react';
 
 function Home() {
+      const { theme } = useContext(ThemeContext);
   return (
-    <>
+    <div className={`home-page ${theme === 'dark' ? 'home-dark' : ''}`}>
       <section className="hero">
         <div className="hero-container">
           <div className="hero-content">
@@ -57,7 +60,7 @@ function Home() {
             <div className="feature-card">
               <div className="feature-icon">🚚</div>
               <h3>Free Shipping</h3>
-              <p>Free delivery on orders above ₹999</p>
+              <p>Free delivery on orders above PKR 999</p>
             </div>
             <div className="feature-card">
               <div className="feature-icon">💳</div>
@@ -78,7 +81,7 @@ function Home() {
           <Crad />
         </div>
       </section>
-    </>
+    </div>
   );
 }
 

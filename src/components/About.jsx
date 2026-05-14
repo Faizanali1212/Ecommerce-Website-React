@@ -1,7 +1,11 @@
 import '../style/Style.css';
+import { ThemeContext } from './ThemContext';
+import { useContext } from 'react';
+
 function About() {
+  const { theme } = useContext(ThemeContext);
   return (
-    <div className="about-page">
+    <div className={`about-page ${theme === 'dark' ? 'about-dark' : ''}`}>
       {/* Hero Section */}
       <section className="about-hero">
         <div className="container">
@@ -132,7 +136,7 @@ function About() {
             </div>
             <div className="team-member">
               <div className="team-avatar">
-                <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=200" alt="CMO" />
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200" alt="CMO" />
               </div>
               <h3>Mike Johnson</h3>
               <p>CMO</p>

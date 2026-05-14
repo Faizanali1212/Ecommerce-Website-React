@@ -253,3 +253,41 @@
 .contact-page {
   scroll-behavior: smooth;
 }
+
+/* Contact page toggle styles */
+.contact-page.contact-dark {
+  background: #0f172a;
+}
+
+.contact-page.contact-dark .contact-form-section,
+.contact-page.contact-dark .contact-info-section {
+  background: #111827;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.35);
+}
+
+.contact-page.contact-dark .section-title,
+.contact-page.contact-dark .contact-item h4,
+.contact-page.contact-dark .contact-item p {
+  color: #e5e7eb;
+}
+
+.contact-page.contact-dark .form-group input,
+.contact-page.contact-dark .form-group textarea {
+  background: #1f2937;
+  border-color: #374151;
+  color: #e5e7eb;
+}
+
+.contact-page.contact-dark .form-group input:focus,
+.contact-page.contact-dark .form-group textarea:focus {
+  background: #111827;
+}
+
+.contact-page.contact-dark .contact-item {
+  background: #1f2937;
+  border-color: #374151;
+}
+
+.contact-page.contact-dark .contact-item:hover {
+  background: #273449;
+}
