@@ -976,6 +976,55 @@ body {
   }
 }
 
+/* NotFound page */
+.not-found-page {
+  min-height: 100vh;
+  padding: 140px 1.5rem 4rem;
+  text-align: center;
+  background: linear-gradient(180deg, #f8fafc 0%, #eef2ff 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.not-found-code {
+  font-size: clamp(4rem, 10vw, 8rem);
+  font-weight: 800;
+  color: #2563eb;
+  line-height: 1;
+  margin-bottom: 0.75rem;
+}
+
+.not-found-title {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  color: #0f172a;
+  margin-bottom: 1rem;
+}
+
+.not-found-text {
+  font-size: 1.05rem;
+  color: #475569;
+  max-width: 500px;
+  margin-bottom: 2rem;
+}
+
+.not-found-btn {
+  display: inline-block;
+  background: #2563eb;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.85rem 1.8rem;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.not-found-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+}
+
 /* About.jsx styles */
 .about-page {
   background: #f8fafc;

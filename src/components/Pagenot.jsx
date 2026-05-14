@@ -1,9 +1,16 @@
+import { Link } from "react-router-dom";
+import "../style/Style.css";
+
 function Pagenot() {
   return (
-    <div>
-      <h2>Page Not Found</h2>
-      <p>The page you are looking for does not exist.</p>
-    </div>
+    <section className="not-found-page">
+      <p className="not-found-code">404</p>
+      <h1 className="not-found-title">Page Not Found</h1>
+      <p className="not-found-text">The page you are looking for does not exist.</p>
+      <Link className="not-found-btn" to="/">
+        Back to Home
+      </Link>
+    </section>
   )
 }
 
